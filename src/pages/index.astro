@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import CheeringDochiCard from '../components/CheeringDochiCard.astro';
 import PopupInfo from '../components/PopupInfo';
 import Layout from '../layouts/Layout.astro';
 
@@ -35,17 +36,7 @@ const guides = (await getCollection('guides', ({ data }) => !data.draft)).sort(
       </div>
     </div>
 
-    <div class="relative mx-auto grid aspect-square w-full max-w-md place-items-center overflow-hidden rounded-[3rem] border border-black/10 bg-[#FFF8DC] p-10 shadow-[0_24px_70px_rgba(0,0,0,0.10)]">
-      <span class="absolute left-8 top-8 rotate-[-18deg] text-2xl opacity-20" aria-hidden="true">&#x1F43E;</span>
-      <span class="absolute bottom-10 right-9 rotate-12 text-3xl opacity-20" aria-hidden="true">&#x1F43E;</span>
-      <svg viewBox="0 0 280 280" class="w-4/5 text-black" role="img" aria-label="A minimalist black cat sitting patiently">
-        <path fill="currentColor" d="M91 101 79 55l40 24a81 81 0 0 1 42 0l40-24-12 46c14 15 22 36 22 60 0 28-14 49-35 61 12 4 24 13 30 29H74c6-16 18-25 30-29-21-12-35-33-35-61 0-24 8-45 22-60Z" />
-        <path d="M105 135h3M172 135h3" stroke="#FFF8DC" stroke-width="9" stroke-linecap="round" />
-        <path d="M133 151c5 5 9 5 14 0" fill="none" stroke="#FFF8DC" stroke-width="5" stroke-linecap="round" />
-        <path d="M202 205c39-5 39-48 14-51" fill="none" stroke="currentColor" stroke-width="17" stroke-linecap="round" />
-      </svg>
-      <p class="absolute bottom-7 text-sm font-extrabold tracking-wide">DOCHI IS CHEERING FOR YOU</p>
-    </div>
+    <CheeringDochiCard />
   </section>
 
   <section id="chapters" class="mx-auto max-w-6xl scroll-mt-28 px-5">

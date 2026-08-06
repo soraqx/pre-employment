@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+import cheeringDochi from '../assets/cheering-dochi.png';
+---
+
+<figure
+  class="relative mx-auto grid aspect-square w-full max-w-md place-items-center overflow-hidden rounded-[3rem] border border-black/10 bg-[#FFF8EE] p-8 shadow-[0_24px_70px_rgba(0,0,0,0.10)] sm:p-10"
+>
+  <svg
+    viewBox="0 0 64 64"
+    class="absolute left-7 top-7 size-8 -rotate-[18deg] fill-[#242424] opacity-20 sm:left-8 sm:top-8"
+    aria-hidden="true"
+  >
+    <ellipse cx="32" cy="40" rx="13" ry="11" />
+    <circle cx="17" cy="25" r="6" />
+    <circle cx="30" cy="18" r="6" />
+    <circle cx="44" cy="21" r="6" />
+    <circle cx="51" cy="34" r="6" />
+  </svg>
+
+  <div class="flex h-full w-full items-center justify-center pb-10 pt-3 sm:pb-12">
+    <Image
+      src={cheeringDochi}
+      alt="Dochi the black cat cheering you on"
+      widths={[320, 480, 640, 800]}
+      sizes="(min-width: 1024px) 384px, (min-width: 640px) 448px, calc(100vw - 40px)"
+      format="webp"
+      loading="eager"
+      fetchpriority="high"
+      class="max-h-[78%] w-auto max-w-[88%] object-contain drop-shadow-[0_14px_18px_rgba(0,0,0,0.14)]"
+    />
+  </div>
+
+  <svg
+    viewBox="0 0 64 64"
+    class="absolute bottom-9 right-8 size-9 rotate-12 fill-[#242424] opacity-20 sm:bottom-10 sm:right-9"
+    aria-hidden="true"
+  >
+    <ellipse cx="32" cy="40" rx="13" ry="11" />
+    <circle cx="17" cy="25" r="6" />
+    <circle cx="30" cy="18" r="6" />
+    <circle cx="44" cy="21" r="6" />
+    <circle cx="51" cy="34" r="6" />
+  </svg>
+
+  <figcaption class="absolute inset-x-6 bottom-6 text-center text-xs font-extrabold tracking-[0.12em] text-[#242424] sm:bottom-7 sm:text-sm">
+    DOCHI IS CHEERING FOR YOU
+  </figcaption>
+</figure>
