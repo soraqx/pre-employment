@@ -1,0 +1,29 @@
+---
+interface Props {
+  href: string;
+  label: string;
+}
+
+const { href, label } = Astro.props;
+---
+
+<a
+  href={href}
+  download
+  class="inline-flex items-center gap-2 rounded-full border border-[#8F5F42]/15 bg-[#B97850] px-5 py-3 text-sm font-extrabold text-white no-underline shadow-[0_8px_20px_rgba(99,65,43,0.16)] transition duration-200 hover:-translate-y-0.5 hover:bg-[#9F6544] hover:shadow-[0_12px_26px_rgba(99,65,43,0.22)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6F4933]"
+>
+  <svg
+    viewBox="0 0 24 24"
+    class="size-4 shrink-0 fill-none stroke-current"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M12 3v12" />
+    <path d="m7 10 5 5 5-5" />
+    <path d="M5 20h14" />
+  </svg>
+  <span>{label}</span>
+  <span aria-hidden="true">🐾</span>
+</a>

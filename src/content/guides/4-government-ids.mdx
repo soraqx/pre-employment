@@ -5,6 +5,11 @@ order: 4
 icon: 🐈‍⬛
 ---
 
+import DownloadButton from '../../components/DownloadButton.astro';
+import philhealthForm from '../../assets/philhealth-form.pdf';
+import philhealthExample from '../../assets/philhealth-example.pdf';
+import sssForm from '../../assets/sss-form.pdf';
+
 ## The Big Three
 
 Many employers in the Philippines ask for your **SSS**, **PhilHealth**, and **Pag-IBIG** membership details before onboarding. Initial registration can now begin online, which iz beri convenient I would say.
@@ -22,6 +27,10 @@ For an initial application:
 3. Save the confirmation email and generated reference or SS number.
 4. Follow any instructions for submitting supporting documents and updating your membership status.
 
+<div className="my-6 flex flex-wrap gap-3">
+  <DownloadButton href={sssForm} label="Download SSS Form" />
+</div>
+
 **Official website:** [https://sso.sss.gov.ph/wsso/logtype?action=register]
 
 ## PhilHealth
@@ -31,6 +40,11 @@ The **Philippine Health Insurance Corporation (PhilHealth)** administers the cou
 Prepare your personal information and supporting identity documents before starting. After registration, keep a record of your **PhilHealth Identification Number (PIN)** and any membership form or confirmation provided.
 
 Your employer may ask you to submit or update your member data, so review every detail carefully.
+
+<div className="my-6 flex flex-wrap gap-3">
+  <DownloadButton href={philhealthForm} label="Download Blank Form" />
+  <DownloadButton href={philhealthExample} label="View Filled Example" />
+</div>
 
 **Official website:** [https://memberinquiry.philhealth.gov.ph/member/login.xhtml]
 
