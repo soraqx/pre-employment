@@ -31,7 +31,8 @@ graphify-out/
 .idea/
 *.swp
 *.swo
-
+.codex/
+graphify-out/
 # Operating system files
 .DS_Store
 Thumbs.db
