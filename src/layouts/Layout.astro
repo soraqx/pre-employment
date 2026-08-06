@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = 'Ready, Set, Hired!',
-  description = 'A friendly guide to feeling prepared for your next opportunity.',
+  title = 'dochi guide',
+  description = 'A warm and friendly pre-employment guide for your next opportunity.',
 } = Astro.props;
 ---
 
@@ -18,22 +18,33 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    <meta name="theme-color" content="#F5F5DC" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <title>{title}</title>
   </head>
-  <body class="flex min-h-screen flex-col">
-    <header class="sticky top-0 z-40 border-b border-beige-100/80 bg-cream-50/85 backdrop-blur-lg">
-      <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4" aria-label="Main navigation">
-        <a href="/" class="flex items-center gap-2 text-lg font-extrabold tracking-tight text-cocoa-700">
-          <span aria-hidden="true" class="grid size-10 place-items-center rounded-2xl bg-beige-100">🌱</span>
-          Ready, Set, Hired!
+  <body class="flex min-h-screen flex-col bg-[#F5F5DC] text-[#242424]">
+    <header class="sticky top-0 z-40 border-b border-black/10 bg-[#FFF8DC]/90 backdrop-blur-lg">
+      <nav
+        class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4"
+        aria-label="Main navigation"
+      >
+        <a href="/" class="group flex items-center gap-3 text-xl font-extrabold tracking-tight text-[#1f1f1f]">
+          <span class="grid size-10 place-items-center rounded-full bg-black text-[#FFF8DC] transition-transform group-hover:-rotate-6" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="size-6 fill-current" role="img">
+              <path d="M5.2 9.1 4.4 4.3l4.1 2.2A8.2 8.2 0 0 1 12 5.7c1.2 0 2.4.3 3.5.8l4.1-2.2-.8 4.8a7.7 7.7 0 0 1 1.4 4.4c0 4.3-3.7 7.5-8.2 7.5s-8.2-3.2-8.2-7.5c0-1.6.5-3.1 1.4-4.4Z" />
+            </svg>
+          </span>
+          dochi guide
         </a>
+
         <div class="flex items-center gap-1 sm:gap-3">
-          <a href="/" class="rounded-full px-3 py-2 text-sm font-bold hover:bg-beige-100">Home</a>
-          <a href="/#chapters" class="rounded-full px-3 py-2 text-sm font-bold hover:bg-beige-100">Guide</a>
+          <a href="/" class="rounded-full px-3 py-2 text-sm font-bold transition hover:bg-black hover:text-[#FFF8DC]">Home</a>
+          <a href="/#chapters" class="rounded-full px-3 py-2 text-sm font-bold transition hover:bg-black hover:text-[#FFF8DC]">Guide</a>
         </div>
       </nav>
     </header>
@@ -42,10 +53,12 @@ const {
       <slot />
     </main>
 
-    <footer class="mt-20 border-t border-beige-100 bg-cream-100/70">
-      <div class="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-8 text-center text-sm text-cocoa-600 sm:flex-row sm:items-center sm:justify-between sm:text-left">
-        <p class="font-bold">You’ve got this. One small step at a time. ✨</p>
-        <p>Made with care for your next chapter.</p>
+    <footer class="mt-20 border-t border-black/10 bg-[#FFF8DC]">
+      <div class="mx-auto flex max-w-6xl flex-col items-center gap-3 px-5 py-8 text-center text-sm text-[#3a3a3a] sm:flex-row sm:justify-between sm:text-left">
+        <p class="font-bold">dochi says: one brave little step at a time.</p>
+        <p class="flex items-center gap-2" aria-label="Made with care and cat paws">
+          Made with care <span aria-hidden="true">&#x1F43E;</span>
+        </p>
       </div>
     </footer>
   </body>

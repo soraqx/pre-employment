@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
 import PopupInfo from '../components/PopupInfo';
+import Layout from '../layouts/Layout.astro';
 
 const chapters = (await getCollection('chapters', ({ data }) => !data.draft)).sort(
   (a, b) => a.data.order - b.data.order,
@@ -9,33 +9,62 @@ const chapters = (await getCollection('chapters', ({ data }) => !data.draft)).so
 ---
 
 <Layout>
-  <section class="mx-auto grid max-w-6xl gap-10 px-5 pb-20 pt-20 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:pt-28">
+  <section class="mx-auto grid max-w-6xl gap-12 px-5 pb-20 pt-16 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:pt-24">
     <div>
-      <p class="mb-4 inline-flex rounded-full bg-beige-100 px-4 py-2 text-sm font-extrabold text-cocoa-600">A gentler way to get job-ready ✨</p>
-      <h1 class="max-w-3xl text-5xl font-extrabold leading-[1.05] tracking-tight text-cocoa-700 sm:text-7xl">Your next step starts here.</h1>
-      <p class="mt-6 max-w-2xl text-lg leading-8 text-cocoa-600">Practical, encouraging guidance for every part of your pre-employment journey—from preparation to interview day.</p>
-      <div class="mt-8">
-        <PopupInfo client:idle title="Before you begin" buttonLabel="Give me a quick tip">
-          Pick just one chapter for today. Small, focused progress is easier to repeat—and repeating it is how confidence grows.
+      <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-[#FFF8DC] px-4 py-2 text-sm font-extrabold">
+        <span aria-hidden="true">&#x1F43E;</span>
+        A cozy corner for getting career-ready
+      </p>
+      <h1 class="max-w-3xl text-5xl font-extrabold leading-[1.04] tracking-tight text-[#1f1f1f] sm:text-7xl">
+        Hello, future
+        <span class="relative inline-block">
+          you.
+          <svg class="absolute -bottom-2 left-0 h-3 w-full text-black/20" viewBox="0 0 180 12" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M2 8c42-7 95 5 176-4" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+          </svg>
+        </span>
+      </h1>
+      <p class="mt-7 max-w-2xl text-lg leading-8 text-[#454545]">
+        Welcome to <strong>dochi guide</strong>, a gentle and practical companion for resumes,
+        interviews, requirements, and every small step before your first day.
+      </p>
+      <div class="mt-9">
+        <PopupInfo client:idle title="A tip from dochi" buttonLabel="Tap the paw for a tip">
+          Choose one tiny task for today. A finished small step feels much better than a perfect plan that never starts.
         </PopupInfo>
       </div>
     </div>
-    <div class="mx-auto grid aspect-square w-full max-w-md place-items-center rounded-[3rem] border border-beige-200 bg-cream-100 p-10 shadow-soft">
-      <span class="text-9xl" aria-label="A sprouting plant">🌱</span>
+
+    <div class="relative mx-auto grid aspect-square w-full max-w-md place-items-center overflow-hidden rounded-[3rem] border border-black/10 bg-[#FFF8DC] p-10 shadow-[0_24px_70px_rgba(0,0,0,0.10)]">
+      <span class="absolute left-8 top-8 rotate-[-18deg] text-2xl opacity-20" aria-hidden="true">&#x1F43E;</span>
+      <span class="absolute bottom-10 right-9 rotate-12 text-3xl opacity-20" aria-hidden="true">&#x1F43E;</span>
+      <svg viewBox="0 0 280 280" class="w-4/5 text-black" role="img" aria-label="A minimalist black cat sitting patiently">
+        <path fill="currentColor" d="M91 101 79 55l40 24a81 81 0 0 1 42 0l40-24-12 46c14 15 22 36 22 60 0 28-14 49-35 61 12 4 24 13 30 29H74c6-16 18-25 30-29-21-12-35-33-35-61 0-24 8-45 22-60Z" />
+        <path d="M105 135h3M172 135h3" stroke="#FFF8DC" stroke-width="9" stroke-linecap="round" />
+        <path d="M133 151c5 5 9 5 14 0" fill="none" stroke="#FFF8DC" stroke-width="5" stroke-linecap="round" />
+        <path d="M202 205c39-5 39-48 14-51" fill="none" stroke="currentColor" stroke-width="17" stroke-linecap="round" />
+      </svg>
+      <p class="absolute bottom-7 text-sm font-extrabold tracking-wide">DOCHI IS CHEERING FOR YOU</p>
     </div>
   </section>
 
   <section id="chapters" class="mx-auto max-w-6xl scroll-mt-28 px-5">
     <div class="mb-8">
-      <p class="font-extrabold uppercase tracking-[0.18em] text-cocoa-400">The guide</p>
-      <h2 class="mt-2 text-3xl font-extrabold text-cocoa-700 sm:text-4xl">Take it chapter by chapter</h2>
+      <p class="font-extrabold uppercase tracking-[0.18em] text-black/50">Explore the guide</p>
+      <h2 class="mt-2 text-3xl font-extrabold text-[#1f1f1f] sm:text-4xl">Take it chapter by chapter</h2>
     </div>
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {chapters.map((chapter) => (
-        <a href={`/guide/${chapter.id}/`} class="group rounded-3xl border border-beige-200 bg-cream-50 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
-          <span class="text-3xl" aria-hidden="true">{chapter.data.emoji}</span>
-          <h3 class="mt-4 text-xl font-extrabold text-cocoa-700 group-hover:text-cocoa-500">{chapter.data.title}</h3>
-          <p class="mt-2 leading-7 text-cocoa-600">{chapter.data.description}</p>
+        <a
+          href={`/guide/${chapter.id}/`}
+          class="group rounded-3xl border border-black/10 bg-[#FFF8DC] p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.10)]"
+        >
+          <div class="flex items-start justify-between">
+            <span class="text-3xl" aria-hidden="true">{chapter.data.emoji}</span>
+            <span class="text-lg opacity-30 transition group-hover:rotate-12 group-hover:opacity-70" aria-hidden="true">&#x1F43E;</span>
+          </div>
+          <h3 class="mt-4 text-xl font-extrabold text-[#242424]">{chapter.data.title}</h3>
+          <p class="mt-2 leading-7 text-[#555]">{chapter.data.description}</p>
         </a>
       ))}
     </div>
