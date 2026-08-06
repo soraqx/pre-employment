@@ -1,0 +1,67 @@
+{
+  ".codex/hooks.json": {
+    "mtime": 1786025992.779145,
+    "ast_hash": "be99ce5e638aa058bbf488fb4131a9fe",
+    "semantic_hash": ""
+  },
+  "astro.config.mjs": {
+    "mtime": 1786026159.109256,
+    "ast_hash": "05506a02cf8da08f8d41e9a45688c0fc",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1786026158.017759,
+    "ast_hash": "5cb29e76158fef1dcccae3c0fdb54064",
+    "semantic_hash": ""
+  },
+  "src/components/PopupInfo.tsx": {
+    "mtime": 1786026444.0609941,
+    "ast_hash": "975e91ddeff7d385c66df941033ef04c",
+    "semantic_hash": ""
+  },
+  "src/content.config.ts": {
+    "mtime": 1786026169.3036933,
+    "ast_hash": "535079eb07bda5beb5a9d58db5a76f4f",
+    "semantic_hash": ""
+  },
+  "src/env.d.ts": {
+    "mtime": 1786026162.9870174,
+    "ast_hash": "72c584e3bd8b5f007b2beb870517b437",
+    "semantic_hash": ""
+  },
+  "src/layouts/Layout.astro": {
+    "mtime": 1786026442.8513532,
+    "ast_hash": "7a8fc66b557cc85da2ccc533d1178c24",
+    "semantic_hash": ""
+  },
+  "src/pages/guide/[...id].astro": {
+    "mtime": 1786026174.656656,
+    "ast_hash": "50a143c780a9c9bf514162dcea686fab",
+    "semantic_hash": ""
+  },
+  "src/pages/index.astro": {
+    "mtime": 1786026172.8282993,
+    "ast_hash": "b11448515ecd9b0e48e71f776a2b402c",
+    "semantic_hash": ""
+  },
+  "tailwind.config.mjs": {
+    "mtime": 1786026160.1411657,
+    "ast_hash": "978c88aac6759da7a778da336182c627",
+    "semantic_hash": ""
+  },
+  "tsconfig.json": {
+    "mtime": 1786026161.189254,
+    "ast_hash": "1d3613ac08bdda17e2b82251613dbc21",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1786025992.7686355,
+    "ast_hash": "21ceb6533048be51308e69e7b74a35cf",
+    "semantic_hash": ""
+  },
+  "src/content/chapters/01-getting-started.mdx": {
+    "mtime": 1786026171.0516224,
+    "ast_hash": "377d2c77772a25f16c81ee0b00d10585",
+    "semantic_hash": ""
+  }
+}

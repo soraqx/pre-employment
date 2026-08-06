@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Ready, Set, Hired!',
+  description = 'A friendly guide to feeling prepared for your next opportunity.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>" />
+    <title>{title}</title>
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <header class="sticky top-0 z-40 border-b border-beige-100/80 bg-cream-50/85 backdrop-blur-lg">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4" aria-label="Main navigation">
+        <a href="/" class="flex items-center gap-2 text-lg font-extrabold tracking-tight text-cocoa-700">
+          <span aria-hidden="true" class="grid size-10 place-items-center rounded-2xl bg-beige-100">🌱</span>
+          Ready, Set, Hired!
+        </a>
+        <div class="flex items-center gap-1 sm:gap-3">
+          <a href="/" class="rounded-full px-3 py-2 text-sm font-bold hover:bg-beige-100">Home</a>
+          <a href="/#chapters" class="rounded-full px-3 py-2 text-sm font-bold hover:bg-beige-100">Guide</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="mt-20 border-t border-beige-100 bg-cream-100/70">
+      <div class="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-8 text-center text-sm text-cocoa-600 sm:flex-row sm:items-center sm:justify-between sm:text-left">
+        <p class="font-bold">You’ve got this. One small step at a time. ✨</p>
+        <p>Made with care for your next chapter.</p>
+      </div>
+    </footer>
+  </body>
+</html>

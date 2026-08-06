@@ -1,0 +1,20 @@
+{
+  "0": "package.json",
+  "1": "devDependencies",
+  "2": "PopupInfo.tsx",
+  "3": "tsconfig.json",
+  "4": "dependencies",
+  "5": "content.config.ts",
+  "6": "AGENTS.md",
+  "7": "@astrojs/mdx",
+  "8": "@astrojs/react",
+  "9": "framer-motion",
+  "10": "react",
+  "11": "react-dom",
+  "12": "tailwindcss",
+  "13": "@tailwindcss/vite",
+  "14": "01-getting-started.mdx",
+  "15": "astro.config.mjs",
+  "16": "env.d.ts",
+  "17": "tailwind.config.mjs"
+}

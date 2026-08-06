@@ -1,0 +1,24 @@
+@config "../../tailwind.config.mjs";
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-cream-50 font-sans text-cocoa-800 antialiased;
+    background-image:
+      radial-gradient(circle at 10% 10%, rgb(238 224 202 / 45%) 0, transparent 28rem),
+      radial-gradient(circle at 90% 40%, rgb(243 232 210 / 55%) 0, transparent 25rem);
+  }
+
+  a,
+  button {
+    @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cocoa-500;
+  }
+}
