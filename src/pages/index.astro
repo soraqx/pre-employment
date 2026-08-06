@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import PopupInfo from '../components/PopupInfo';
 import Layout from '../layouts/Layout.astro';
 
-const chapters = (await getCollection('chapters', ({ data }) => !data.draft)).sort(
+const guides = (await getCollection('guides', ({ data }) => !data.draft)).sort(
   (a, b) => a.data.order - b.data.order,
 );
 ---
@@ -54,17 +54,17 @@ const chapters = (await getCollection('chapters', ({ data }) => !data.draft)).so
       <h2 class="mt-2 text-3xl font-extrabold text-[#1f1f1f] sm:text-4xl">Take it chapter by chapter</h2>
     </div>
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {chapters.map((chapter) => (
+      {guides.map((guide) => (
         <a
-          href={`/guide/${chapter.id}/`}
+          href={`/guide/${guide.id}/`}
           class="group rounded-3xl border border-black/10 bg-[#FFF8DC] p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.10)]"
         >
           <div class="flex items-start justify-between">
-            <span class="text-3xl" aria-hidden="true">{chapter.data.emoji}</span>
+            <span class="text-3xl" aria-hidden="true">{guide.data.icon}</span>
             <span class="text-lg opacity-30 transition group-hover:rotate-12 group-hover:opacity-70" aria-hidden="true">&#x1F43E;</span>
           </div>
-          <h3 class="mt-4 text-xl font-extrabold text-[#242424]">{chapter.data.title}</h3>
-          <p class="mt-2 leading-7 text-[#555]">{chapter.data.description}</p>
+          <h3 class="mt-4 text-xl font-extrabold text-[#242424]">{guide.data.title}</h3>
+          <p class="mt-2 leading-7 text-[#555]">{guide.data.description}</p>
         </a>
       ))}
     </div>
